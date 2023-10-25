@@ -171,7 +171,8 @@ function animate() {
         }) &&
         enemy.isAttacking ) {
         enemy.isAttacking = false
-        console.log("enemy attack success")
+        player.health -= 20
+        document.querySelector("#playerHealth").style.width = player.health + '%'
         
     }
 }
