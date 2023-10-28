@@ -128,8 +128,8 @@ function rectangularCollision({rectangle1, rectangle2}) {
     )
 }
 
-let timer = 10
-function decreaseTimer(params) {
+let timer = 5
+function decreaseTimer() {
     
     if (timer > 0) {
         {
@@ -138,9 +138,15 @@ function decreaseTimer(params) {
             document.querySelector('#timer').innerHTML = timer
         }  
     }
-   if (player.health === enemy.health) {
-    console.log('tie')
-   }
+    if (timer === 0) {
+        document.querySelector('#displayText').style.display = 'flex'
+        if (player.health === enemy.health) {
+            document.querySelector('#displayText').innerHTML = 'Draw'
+           } else if (player.health > enemy.health) {
+            document.querySelector('#displayText').innerHTML = 'Player 1 Wins'
+           }
+    }
+  
 }
 decreaseTimer()
 
