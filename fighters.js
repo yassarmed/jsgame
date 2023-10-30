@@ -7,7 +7,13 @@ canvas.height = 576
 c.fillRect(0, 0, canvas.width, canvas.height)
 const gravity = 0.7
 
-
+const background = new Sprite({
+    position: {
+        x: 0,
+        y: 0
+    },
+    imageSrc: './img/fighting_game/rooftop_real.png'
+})
 const player = new Fighter({
     position: {
     x: 0,
@@ -26,7 +32,7 @@ const player = new Fighter({
 
 const enemy = new Fighter({
     position: {
-    x: 400,
+    x: 979,
     y: 100,
 },
     velocity: {
@@ -107,6 +113,7 @@ function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
     c.fillRect(0,0, canvas.width, canvas.height)
+    background.update()
     player.update()
     enemy.update()
 
